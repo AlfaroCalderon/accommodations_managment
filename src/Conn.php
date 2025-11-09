@@ -12,12 +12,12 @@ class Conn {
             $dotenv->load();
 
             // Use environment variables from .env file
-            $host = $_ENV['DB_HOST'] ?? '127.0.0.1';
-            $port = $_ENV['DB_PORT'] ?? '3306';
-            $db   = $_ENV['DB_NAME'] ?? 'users_db';
-            $user = $_ENV['DB_USER'] ?? 'root';
-            $pass = $_ENV['DB_PASS'] ?? '';
-
+            $host = $_ENV['MYSQLHOST'];
+            $port = $_ENV['MYSQLPORT'];
+            $db   = $_ENV['MYSQLDATABASE'];
+            $user = $_ENV['MYSQLUSER'];
+            $pass = $_ENV['MYSQLPASSWORD'];
+            
             $dsn = "mysql:host={$host};port={$port};dbname={$db};charset=utf8mb4";
 
             $options = [
