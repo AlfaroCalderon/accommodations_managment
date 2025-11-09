@@ -7,16 +7,29 @@ use Dotenv\Dotenv;
 class Conn {
     public function getConn(): ?\PDO {
         try {
-            // Load .env file
-            $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
-            $dotenv->load();
+            // Load .env file only if it exists (for local development)
+            if (file_exists(__DIR__ . '/../.env')) {
+                $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+                $dotenv->load();
+            }
 
-            // Use environment variables from .env file
-            $host = $_ENV['MYSQLHOST'];
-            $port = $_ENV['MYSQLPORT'];
-            $db   = $_ENV['MYSQLDATABASE'];
-            $user = $_ENV['MYSQLUSER'];
-            $pass = $_ENV['MYSQLPASSWORD'];
+            // Check if Railway provides MYSQL_URL (preferred for Railway deployments)
+            if (isset($_ENV['MYSQL_URL'])) {
+                // Parse Railway's MYSQL_URL
+                $url = parse_url($_ENV['MYSQL_URL']);
+                $host = $url['host'];
+                $port = $url['port'] ?? 3306;
+                $db = ltrim($url['path'], '/');
+                $user = $url['user'];
+                $pass = $url['pass'];
+            } else {
+                // Fallback to individual environment variables (for local development)
+                $host = $_ENV['MYSQLHOST'] ?? 'localhost';
+                $port = $_ENV['MYSQLPORT'] ?? '3306';
+                $db   = $_ENV['MYSQLDATABASE'] ?? 'railway';
+                $user = $_ENV['MYSQLUSER'] ?? 'root';
+                $pass = $_ENV['MYSQLPASSWORD'] ?? '';
+            }
             
             $dsn = "mysql:host={$host};port={$port};dbname={$db};charset=utf8mb4";
 
