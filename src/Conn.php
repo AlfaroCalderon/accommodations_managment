@@ -2,15 +2,21 @@
 
 namespace Ralfaro\UserManagement;
 
+use Dotenv\Dotenv;
+
 class Conn {
     public function getConn(): ?\PDO {
         try {
-            // Use environment variables (set these in Railway)
-            $host = getenv('DB_HOST') ?: '127.0.0.1';
-            $port = getenv('DB_PORT') ?: '3306';
-            $db   = getenv('DB_NAME') ?: 'users_db';
-            $user = getenv('DB_USER') ?: 'root';
-            $pass = getenv('DB_PASS') ?: '';
+            // Load .env file
+            $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+            $dotenv->load();
+
+            // Use environment variables from .env file
+            $host = $_ENV['DB_HOST'] ?? '127.0.0.1';
+            $port = $_ENV['DB_PORT'] ?? '3306';
+            $db   = $_ENV['DB_NAME'] ?? 'users_db';
+            $user = $_ENV['DB_USER'] ?? 'root';
+            $pass = $_ENV['DB_PASS'] ?? '';
 
             $dsn = "mysql:host={$host};port={$port};dbname={$db};charset=utf8mb4";
 
