@@ -1,5 +1,8 @@
  body {
-            background: #f4f6f8;
+            background-image: url('https://res.cloudinary.com/dcostp8ak/image/upload/v1762721328/wade-meng-LgCj9qcrfhI-unsplash_sihdrp.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;

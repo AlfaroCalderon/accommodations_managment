@@ -1,4 +1,5 @@
 <?php
+ob_start(); // Start output buffering
 session_start();
 require __DIR__.'/vendor/autoload.php';
 use Ralfaro\UserManagement\AccommodationsManagement;
@@ -36,8 +37,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-require 'navbar.php';
+ob_clean(); // Clear any previous output
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,6 +48,7 @@ require 'navbar.php';
     <link rel="stylesheet" href="css/accommodation_management.css">
 </head>
 <body>
+    <?php require 'navbar.php'; ?>
     <div class="form-container">
         <h2>Add Accommodation</h2>
         <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>">

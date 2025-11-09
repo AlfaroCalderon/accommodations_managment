@@ -6,7 +6,6 @@ if(empty($user_identifier)){
     header('Location: index.php');
     exit();
 }
-
 ?>
 <link rel="stylesheet" href="css/navbar.css">
 <nav class="navbar">

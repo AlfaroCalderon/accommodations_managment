@@ -31,7 +31,6 @@ foreach($likedAccommodations as $fav){
     $checkedids[] = $fav['accomodation_id'];
 }
 
-require 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +41,7 @@ require 'navbar.php';
     <link rel="stylesheet" href="css/dashboard_styles.css">
 </head>
 <body>
+    <?php require 'navbar.php'; ?>
     <div class="dashboard-container">
         <h1>Accommodations Dashboard</h1>
         <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>">

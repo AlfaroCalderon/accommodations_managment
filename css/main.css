@@ -7,10 +7,15 @@
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: url('https://res.cloudinary.com/dcostp8ak/image/upload/v1762721328/wade-meng-LgCj9qcrfhI-unsplash_sihdrp.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+
         }
         
         .login-container {
