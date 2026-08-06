@@ -9,6 +9,13 @@
         height: 60px;
         box-shadow: 0 2px 8px rgba(44,62,80,0.08);
     }
+
+    @media (max-width: 780px){
+        .navbar{
+            flex-direction: column;
+            height: auto;
+        }
+    }
     .navbar-logo {
         color: #ecf0f1;
         font-size: 1.5rem;
@@ -20,6 +27,15 @@
     .navbar-menu {
         display: flex;
         gap: 25px;
+    }
+
+    @media (max-width: 780px){
+        .navbar-menu{
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            margin-top: 10px;
+        }
     }
     .navbar-menu a {
         color: #ecf0f1;
