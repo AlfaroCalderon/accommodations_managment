@@ -22,9 +22,17 @@
         }
         .accommodations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
         }
+
+        @media (max-width: 768px) {
+            .accommodations-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
         .accommodation-card {
             background: #f9fafb;
             border-radius: 14px;
