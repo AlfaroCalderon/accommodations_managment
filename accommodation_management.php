@@ -1,6 +1,13 @@
 <?php
 ob_start(); // Start output buffering
 session_start();
+$user_identifier = $_SESSION['user']['user_id'];
+$user_role = $_SESSION['user']['user_role'];
+
+if(empty($user_identifier)){
+    header('Location: index.php');
+    exit();
+}
 require __DIR__.'/vendor/autoload.php';
 use Ralfaro\UserManagement\AccommodationsManagement;
 use  Ralfaro\UserManagement\Accommodations;

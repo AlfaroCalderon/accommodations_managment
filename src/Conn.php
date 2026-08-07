@@ -41,7 +41,6 @@ class Conn {
 
             return new \PDO($dsn, $user, $pass, $options);
         } catch (\Throwable $th) {
-            // In production you may want to log the error rather than echoing
             error_log("DB connection error: " . $th->getMessage());
             echo "Database connection error.";
             return null;

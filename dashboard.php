@@ -1,10 +1,17 @@
 <?php
 session_start();
+$user_identifier = $_SESSION['user']['user_id'];
+$user_role = $_SESSION['user']['user_role'];
+
+if(empty($user_identifier)){
+    header('Location: index.php');
+    exit();
+}
+
 require __DIR__.'/vendor/autoload.php';
 use Ralfaro\UserManagement\AccommodationsManagement;
 $accommodations = new AccommodationsManagement();
 $allAccommodations = $accommodations->showAllAvailableAccommodations();
-// Simulate favorites (in real app, fetch from DB/user session)
 $favorites = isset($_POST['favorites']) ? $_POST['favorites'] : [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
