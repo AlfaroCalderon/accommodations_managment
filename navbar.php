@@ -7,7 +7,6 @@ if(empty($user_identifier)){
     exit();
 }
 ?>
-<link rel="stylesheet" href="css/navbar.css">
 <nav class="navbar">
     <a href="dashboard.php" class="navbar-logo">Accommodations 🏨</a>
     <div class="navbar-menu">

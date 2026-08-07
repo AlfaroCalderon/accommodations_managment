@@ -12,10 +12,6 @@
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
         }
         
         .login-container {
@@ -25,6 +21,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
+            margin: 3rem auto;
         }
         
         .login-header {

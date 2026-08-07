@@ -40,6 +40,7 @@ foreach($likedAccommodations as $fav){
     <title>Accommodations Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard_styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
     <?php require 'navbar.php'; ?>

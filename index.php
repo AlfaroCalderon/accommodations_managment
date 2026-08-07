@@ -24,7 +24,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+   
     <div class="login-container">
         <div class="login-header">
             <h1>🏨 Accommodation Portal</h1>
