@@ -23,6 +23,12 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar-menu a,
+.signout {
+    box-sizing: border-box;
 }
 
 .navbar-menu a {
@@ -47,6 +53,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     transition: background 0.2s;
+    overflow: hidden;
 }
 
 .signout:hover {
@@ -55,10 +62,9 @@
 
 @media screen and (max-width: 768px) {
     .navbar {
-        background: orange;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        
     }
 
     .navbar-logo {
@@ -67,11 +73,10 @@
     }
 
     .navbar-menu {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        width: 100% !important;
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
     }
 
     .navbar-menu a {
