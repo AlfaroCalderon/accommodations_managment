@@ -1,12 +1,12 @@
 <?php
 session_start();
-$user_identifier = $_SESSION['user']['user_id'];
-$user_role = $_SESSION['user']['user_role'];
-
-if(empty($user_identifier)){
+if(empty($_SESSION['user']['user_id'])){
     header('Location: index.php');
     exit();
 }
+
+$user_identifier = $_SESSION['user']['user_id'];
+$user_role = $_SESSION['user']['user_role'];
 
 require __DIR__.'/vendor/autoload.php';
 use Ralfaro\UserManagement\AccommodationsManagement;
